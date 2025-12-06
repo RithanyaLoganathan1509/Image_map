@@ -82,6 +82,41 @@ css.css:
  }
 ```
 ```
+image.html
+
+{% load static %}
+<html>
+
+<head>
+    <title>Imap</title>
+    <style>
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        h1 {
+            text-align: center;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> T. Nagar </h1>
+    <img src="{% static 'Screenshot 2025-11-28 200146.png' %}" usemap="#imap">
+    <map name="imap">
+        <area shape="rect" coords="295,450,480,402" title="Saravana Stores" href="{% url 'saravana' %}">
+        <area shape="rect" coords="337,100,573,200" title="GRT Jewellers" href="{% url 'grt' %}">
+        <area shape="rect" coords="600,176,907,270" title="Geetham Restaurant" href="{% url 'geetham' %}">
+        <area shape="rect" coords="840,1095,1067,360" title="Bata Shoe Store" href="{% url 'bata' %}">
+    </map>
+</body>
+</html>
+```
+```
 saravana.html:
 
 {% load static %}
